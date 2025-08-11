@@ -1,0 +1,13 @@
+# Ne pas ignorer README.md
+!README.md
+# Ignorer les fichiers main.c spécifiquement
+*main.c
+# Ignorer les fichiers de sortie générés par GCC
+*.exe
+# Ignorer les fichiers de sauvegarde de l'éditeur
+*~
+*.bak
+# Ignorer les fichiers de log générés par les tests ou le débogage
+*.log
+#ignore les fichiers .out
+*.out
