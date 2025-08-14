@@ -1,0 +1,26 @@
+.TH Simple_Shell 3 "14 August 2025" "Custom Version" "_Simple_Shell Manpage"
+.SH NAME
+Simple_Shell \- our version of Simple Shell
+
+.SH SYNOPSIS
+.B #include """main.h"""
+
+.B int Simple_Shell(const char *format, ...);
+.SH DESCRIPTION
+.B Simple_Shell()
+is a simplified implementation of the standard SHELL of Unix. It displays data to the standard output using a format string.
+.T
+.SH RETURN VALUE
+Returns.
+If it is an error the return will be negative.
+.SH EXAMPLE
+.nf
+Simple_Shell
+.fi
+Output:
+.in
+
+.SH SEE ALSO
+.BR printf(3)
+.SH AUTHOR
+Function written by ROY Mathis, KEDDOUS Heytem and GODALIER Mathieu.
