@@ -13,9 +13,14 @@
 #include <errno.h>
 #include <signal.h>
 
+/**
+*struct simple_shell - our version of a simple shell
+*/
 typedef struct simple_shell
 {
 
 }
+
+int prompt(void);
 
 #endif /*simple_shell_h*/
