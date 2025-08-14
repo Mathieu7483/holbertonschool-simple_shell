@@ -12,3 +12,4 @@
 #ignore les fichiers .out
 *.out
 #Ignorer les fichiers sh générés par la commande de script de push/pull
+*.sh
