@@ -1,5 +1,7 @@
-#ifndef SHELL_H
-#define SHELL_H
+#ifndef SIMPLE_SHELL_H
+#define SIMPLE_SHELL_H
+
+#define _GNU_SOURCE
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -16,4 +18,4 @@ typedef struct simple_shell
 
 }
 
-#endif
+#endif /*simple_shell_h*/
