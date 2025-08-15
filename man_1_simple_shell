@@ -3,12 +3,12 @@
 Simple_Shell \- our version of Simple Shell
 
 .SH SYNOPSIS
-.B #include """main.h"""
+.B #include """simple_shell.h"""
 
 .B int Simple_Shell(const char *format, ...);
 .SH DESCRIPTION
 .B Simple_Shell()
-is a simplified implementation of the standard SHELL of Unix. It displays data to the standard output using a format string.
+is a simplified implementation of the standard SHELL of Unix.
 .T
 .SH RETURN VALUE
 Returns.
