@@ -2,9 +2,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
-* prompt - Entry point for the simple shell prompt program.
+*prompt - Entry point for the simple shell prompt program.
 *
-* Return: 0 on success, or another value on error.
+*Return: 0 on success, or another value on error.
 */
 int prompt(void)
 {
@@ -15,7 +15,7 @@ int prompt(void)
 
 	while (1)
 	{
-		printf("$ ");
+		printf("#cisfun$ ");
 		nread = getline(&line, &len, stdin);
 
 		if (nread == -1)
@@ -30,3 +30,14 @@ int prompt(void)
 	free(line);
 	return (0);
 }
+
+/**
+*main - to gcc
+*Return: prompt
+*/
+int main(void)
+{
+prompt();
+return (0);
+}
+
