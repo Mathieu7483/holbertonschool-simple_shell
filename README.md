@@ -1,6 +1,6 @@
 # holbertonschool-simple_shell
 create a simple shell
-<img src= "https://github.com/Mathieu7483/Aiko78-Photgraphy/blob/main/holberton%20modif.png">
+<img src= "https://github.com/Mathieu7483/holbertonschool-simple_shell/blob/Mathieu/img/image%20readme%20pour%20simple%20shell.png">
 
 # 📚 holbertonschool-simple_shell_exercices
 
