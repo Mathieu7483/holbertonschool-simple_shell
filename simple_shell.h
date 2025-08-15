@@ -21,6 +21,7 @@ typedef struct simple_shell
 
 }
 
-int prompt(void);
+void execute_command(char *command, char **envp);
+int main(int argc, char **argv, char **envp);
 
 #endif /*simple_shell_h*/
