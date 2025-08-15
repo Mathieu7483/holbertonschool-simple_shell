@@ -21,6 +21,6 @@ valgrind --leak-check=full ./mon_programme
 ```
 
 # ✍️ Auteurs
-[Mathis ROY](https://github.com/rpokman)
-[Heytem KEDDOUS](https://github.com/h7k2)
+[Mathis ROY](https://github.com/rpokman) ,
+[Heytem KEDDOUS](https://github.com/h7k2) ,
 [Mathieu GODALIER](https://github.com/Mathieu7483) - Elèves en programmation à la Holberton School
