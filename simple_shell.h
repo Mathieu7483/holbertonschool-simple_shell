@@ -19,9 +19,10 @@
 typedef struct simple_shell
 {
 
-}
+} simple_shell_t;
 
 void execute_command(char *command, char **envp);
 int main(int argc, char **argv, char **envp);
+int exit_command(char *command);
 
 #endif /*simple_shell_h*/
