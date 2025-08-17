@@ -12,7 +12,7 @@ char *_which(const char *command, const char *path_env)
     char *file_path;
     struct stat st;
 
-    // If the command is an absolute or relative path
+    /* If the command is an absolute or relative path */
     if (strchr(command, '/') != NULL)
     {
         if (stat(command, &st) == 0)
@@ -22,31 +22,33 @@ char *_which(const char *command, const char *path_env)
         return NULL;
     }
 
-    // duplicate the PATH environment variable
+    /* duplicate the PATH environment variable */
     path_copy = strdup(path_env);
     if (path_copy == NULL) {
         perror("strdup");
         return NULL;
     }
 
-    // allocating memory for the file path
-    file_path = malloc(256); // size of the path buffer
-    if (file_path == NULL) {
+    /* allocating memory for the file path */
+    file_path = malloc(256); /* size of the path buffer */
+    if (file_path == NULL) 
+    {
         perror("malloc");
         free(path_copy);
         return NULL;
     }
 
-    // Read the PATH directories
+    /* Read the PATH directories */
     path_token = strtok(path_copy, ":");
-    while (path_token != NULL) {
-        // Construire le chemin complet
+    while (path_token != NULL) 
+    {
+        /* Build the full path */
         sprintf(file_path, "%s/%s", path_token, command);
 
-        // Check if the file exists and is executable
+        /* Check if the file exists and is executable */
         if (stat(file_path, &st) == 0 && (st.st_mode & S_IXUSR)) {
             free(path_copy);
-            return file_path; // Found the file
+            return file_path; /* Found the file */
         }
 
         path_token = strtok(NULL, ":");
@@ -54,7 +56,7 @@ char *_which(const char *command, const char *path_env)
 
     free(path_copy);
     free(file_path);
-    return NULL; // File not found in PATH
+    return NULL; /* File not found in PATH */
 }
 
 /**
@@ -73,14 +75,14 @@ void my_fork(char **args)
         return;
     }
 
-    // Handle PATH management as requested in task 3
+    /* Handle PATH management */
     full_path = _which(args[0], path_env);
     if (full_path == NULL) {
         fprintf(stderr, "./simple_shell: 1: %s: not found\n", args[0]);
         return;
     }
 
-    // create a child process
+    /* Create a child process */
     pid = fork();
     if (pid == -1) {
         perror("fork");
@@ -89,13 +91,13 @@ void my_fork(char **args)
     }
 
     if (pid == 0) {
-        // Code child process
+        /* Code child process */
         if (execve(full_path, args, environ) == -1) {
             perror("execve");
             exit(EXIT_FAILURE);
         }
     } else {
-        // code parent
+        /* Code parent process */
         wait(&status);
     }
     free(full_path);
@@ -115,13 +117,13 @@ int main(void)
     int i;
 
     while (1) {
-        printf("cisfun$ "); // display the prompt
+        printf("cisfun$ "); /* display the prompt */
         fflush(stdout);
 
-        // read a line from standard input
+        /* read a line from standard input */
         read_bytes = getline(&line, &len, stdin);
         if (read_bytes == -1) {
-            // Handle end of file (Ctrl+D)
+            /* Handle end of file (Ctrl+D) */
             if (feof(stdin)) {
                 printf("\n");
                 break;
@@ -131,17 +133,17 @@ int main(void)
             }
         }
 
-        // delete the newline character at the end of the line
+        /* delete the newline character at the end of the line */
         if (line[read_bytes - 1] == '\n') {
             line[read_bytes - 1] = '\0';
         }
 
-        // checking if the line is empty
+        /* checking if the line is empty */
         if (strlen(line) == 0) {
             continue;
         }
 
-        // Tokenize the line into arguments
+        /* Tokenize the line into arguments */
         i = 0;
         token = strtok(line, " ");
         while (token != NULL) {
@@ -149,9 +151,9 @@ int main(void)
             i++;
             token = strtok(NULL, " ");
         }
-        args[i] = NULL; // finish the args array
+        args[i] = NULL; /* finish the args array */
 
-        // Call to my_fork to execute the command
+        /* Call to my_fork to execute the command */
         my_fork(args);
     }
 
