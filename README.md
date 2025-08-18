@@ -43,7 +43,7 @@ valgrind --leak-check=full ./my_program
 
 To access the manpage:
 ```bash
-~/Holberton/holbertonschool-simple_shell$ man ./man_3_printf
+~/Holberton/holbertonschool-simple_shell$man ./man_1_simple_shell
 ```
 
 # ✍️ Authors
