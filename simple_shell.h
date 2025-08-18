@@ -15,13 +15,14 @@
 
 /**
 *struct simple_shell - our version of a simple shell
-*/
+
 typedef struct simple_shell
 {
 
-}
+}*/
 
 void execute_command(char *command, char **envp);
 int main(int argc, char **argv, char **envp);
+int parse_args(char *line, char **args);
 
 #endif /*simple_shell_h*/
