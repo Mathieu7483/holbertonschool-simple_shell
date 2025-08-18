@@ -13,24 +13,26 @@
 #include <errno.h>
 #include <signal.h>
 
+char *_strdup(char *str);
+int _strcmp(char *s1, char *s2);
+char *_strchr(char *s, char c);
+int _strlen(char *s);
+char *my_getenv(const char *name);
+
 /**
 *struct simple_shell - our version of a simple shell
 
 typedef struct simple_shell
 {
-
-<<<<<<< HEAD
-}*/
-
-void execute_command(char *command, char **envp);
-int main(int argc, char **argv, char **envp);
-int parse_args(char *line, char **args);
 =======
-} simple_shell_t;
+} simple_shell_t;*/
 
-void execute_command(char *command, char **envp);
+int parse_args(char *line, char **args);
+void my_fork(char **args);
+int exit_command(char *line);
+void execute_command(char *line, char **envp);
+
 int main(int argc, char **argv, char **envp);
-int exit_command(char *command);
->>>>>>> 6bf8a2e77ea0ed8968ee9405b57a666ef5131716
+
 
 #endif /*simple_shell_h*/
