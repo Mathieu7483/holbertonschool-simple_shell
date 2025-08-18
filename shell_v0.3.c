@@ -24,7 +24,8 @@ char *_which(const char *command, const char *path_env)
 
     /* duplicate the PATH environment variable */
     path_copy = strdup(path_env);
-    if (path_copy == NULL) {
+    if (path_copy == NULL)
+	{
         perror("strdup");
         return NULL;
     }
@@ -46,7 +47,8 @@ char *_which(const char *command, const char *path_env)
         sprintf(file_path, "%s/%s", path_token, command);
 
         /* Check if the file exists and is executable */
-        if (stat(file_path, &st) == 0 && (st.st_mode & S_IXUSR)) {
+        if (stat(file_path, &st) == 0 && (st.st_mode & S_IXUSR))
+		{
             free(path_copy);
             return file_path; /* Found the file */
         }
@@ -77,26 +79,32 @@ void my_fork(char **args)
 
     /* Handle PATH management */
     full_path = _which(args[0], path_env);
-    if (full_path == NULL) {
+    if (full_path == NULL)
+	{
         fprintf(stderr, "./simple_shell: 1: %s: not found\n", args[0]);
         return;
     }
 
     /* Create a child process */
     pid = fork();
-    if (pid == -1) {
+    if (pid == -1)
+	{
         perror("fork");
         free(full_path);
         return;
     }
 
-    if (pid == 0) {
+    if (pid == 0)
+	{
         /* Code child process */
-        if (execve(full_path, args, environ) == -1) {
+        if (execve(full_path, args, environ) == -1)
+		{
             perror("execve");
             exit(EXIT_FAILURE);
         }
-    } else {
+    }
+	else
+	{
         /* Code parent process */
         wait(&status);
     }
@@ -119,42 +127,42 @@ int main(int argc, char **argv, char **envp)
     char *args[256];
     int i;
 
-    while (1) {
+    while (1)
+	{
         printf("cisfun$ "); /* display the prompt */
         fflush(stdout);
 
         /* read a line from standard input */
         read_bytes = getline(&line, &len, stdin);
-        if (read_bytes == -1) {
+        if (read_bytes == -1)
+		{
             /* Handle end of file (Ctrl+D) */
-            if (feof(stdin)) {
+            if (feof(stdin))
+			{
                 printf("\n");
                 break;
-            } else {
+            }
+			else
+			{
                 perror("getline");
                 break;
             }
         }
 
         /* delete the newline character at the end of the line */
-        if (line[read_bytes - 1] == '\n') {
+        if (line[read_bytes - 1] == '\n')
+		{
             line[read_bytes - 1] = '\0';
         }
 
         /* checking if the line is empty */
-        if (strlen(line) == 0) {
+        if (strlen(line) == 0)
+		{
             continue;
         }
 
-        /* Tokenize the line into arguments */
-        i = 0;
-        token = strtok(line, " ");
-        while (token != NULL) {
-            args[i] = token;
-            i++;
-            token = strtok(NULL, " ");
-        }
-        args[i] = NULL; /* finish the args array */
+        /* Use the new function to parse arguments */
+        parse_args(line, args);
 
         /* Call to my_fork to execute the command */
         my_fork(args);
