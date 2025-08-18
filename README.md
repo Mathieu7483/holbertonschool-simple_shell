@@ -2,25 +2,49 @@
 create a simple shell
 <img src= "https://github.com/Mathieu7483/holbertonschool-simple_shell/blob/Mathieu/img/image%20readme%20pour%20simple%20shell.png">
 
-# 📚 holbertonschool-simple_shell_exercices
+# 📚 holbertonschool-simple_shell
+Welcome to my holbertonschool-simple_shell repository! This directory marks the beginning of my intensive journey into learning the C programming language, with a strong focus on low-level programming. It compiles the exercises completed as part of my training, centered around building a simple shell in collaboration with two fellow students: Mathis and Heytem.
 
-Bienvenue dans mon dépôt **`holbertonschool-simple_shell`** ! Ce répertoire est le point de départ de mon parcours d'apprentissage intensif du langage C, en mettant l'accent sur la programmation de bas niveau. Il compile les exercices réalisés dans le cadre de ma formation, sur la création d'un shell simple en collaboration avec 2 autres élèves Mathis et Heytem.
+Through these projects, my goal is to develop a deep understanding of how programs work "under the hood"—exploring memory management, compilation processes, and direct interactions with the operating system.
 
-Mon objectif à travers ces projets est de développer une compréhension profonde de la manière dont les programmes fonctionnent "sous le capot", en explorant la mémoire, la compilation et les interactions directes avec le système.
+# 📚 Table of Contents
+
+# 💡 Project Context
+This project is part of the Holberton School programming curriculum. It focuses on creating a custom simple shell, how it works , and how to use it.
+
+# 📖 Learned Resources
+
+# ✅ General Requirements
+
+# 💻 Usage
+
+# 📊 Flowchart et Snippets
+## Flowchart
+
+## Snippets
+
+# 📋 Project Structure and Tasks
+## *The project is organized around the progressive implementation of the simple shell and its functionalities.*
+
+### Tasks
 
 # ⚙️ Compilation
-Les fichiers de ce projet seront compilés à l'aide de gcc avec les options suivantes :
+The files in this project are compiled using gcc with the following options:
 
-```Bash
+```bash
+
 gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o my_file_io_program
 ```
+To check for memory leaks, use:
 
-Verification des fuites de mémoire à l'aide de la commande
-```Bash
-valgrind --leak-check=full ./mon_programme
+```bash
+valgrind --leak-check=full ./my_program
 ```
 
-# ✍️ Auteurs
-[Mathis ROY](https://github.com/rpokman) ,
-[Heytem KEDDOUS](https://github.com/h7k2) ,
-[Mathieu GODALIER](https://github.com/Mathieu7483) - Elèves en programmation à la Holberton School
+To access the manpage:
+```bash
+~/Holberton/holbertonschool-simple_shell$ man ./man_3_printf
+```
+
+# ✍️ Authors
+[Mathis ROY](https://github.com/rpokman), [Heytem KEDDOUS](https://github.com/h7k2), [Mathieu GODALIER](https://github.com/Mathieu7483) — Students in programming at Holberton School
