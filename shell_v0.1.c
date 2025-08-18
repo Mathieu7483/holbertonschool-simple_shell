@@ -72,7 +72,7 @@ int main(int argc, char **argv, char **envp)
 		}
 		if (strlen(line) > 0)
 		{
-			if (strcmp(line, "exit") == 0)/*Check if user wants to exit the shell*/
+			if (exit_command(line))/*Check if user wants to exit the shell*/
 			{
 				break;
 			}
