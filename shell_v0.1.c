@@ -41,44 +41,52 @@ void execute_command(char *command, char **envp)
 */
 int main(int argc, char **argv, char **envp)
 {
-	char *line = NULL;
+    char *line = NULL;
+    size_t len = 0;
+    ssize_t nread;
+    char *args[256];
 
-	size_t len = 0;
-	ssize_t nread;
-	(void)argc;/*ignore argc and argv for the gcc*/
-	(void)argv;
-	while (1)
-	{
-		printf("#cisfun$ ");/*our prompt Cisfun$ */
-		fflush(stdout);/*free the memory buffered*/
-		nread = getline(&line, &len, stdin);/* Read user input from stdin */
-		if (nread == -1)
-		{
-			if (feof(stdin))/*if not read exit program*/
-			{
-				printf("\n");
-				break;
-			}
-			else
-			{
-				perror("getline");/*display error on getline and quit*/
-				exit(1);
-			}
-		}
-		if (line[nread - 1] == '\n')
-		{
-			line[nread - 1] = '\0';
-			/*Remove the newline character at the end of the input*/
-		}
-		if (strlen(line) > 0)
-		{
-			if (exit_command(line))/*Check if user wants to exit the shell*/
-			{
-				break;
-			}
-			execute_command(line, envp);/*Execute the user command*/
-		}
-	}
-	free(line);
-	return (0);
+    (void)argc;
+    (void)argv;
+
+    while (1)
+    {
+        printf("cisfun$ ");/* display the prompt */
+        fflush(stdout);
+
+		/* read a line from standard input */
+        nread = getline(&line, &len, stdin);
+        if (nread == -1)
+        {
+            if (feof(stdin))
+            {
+                printf("\n");
+                break;
+            }
+            else
+            {
+                perror("getline");
+                exit(EXIT_FAILURE);
+            }
+        }
+
+        if (line[nread - 1] == '\n')
+            line[nread - 1] = '\0';
+
+        if (_strlen(line) == 0)
+            continue;
+
+        if (exit_command(line))
+            break;
+
+        /* Si tu veux utiliser parse_args + my_fork */
+        parse_args(line, args);
+        my_fork(args);
+
+        /* Sinon, si tu veux utiliser execute_command directement */
+        /* execute_command(line, envp); */
+    }
+
+    free(line);
+    return EXIT_SUCCESS;
 }
