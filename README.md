@@ -33,12 +33,12 @@ The files in this project are compiled using gcc with the following options:
 
 ```bash
 
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o my_file_io_program
+gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o simple_shell
 ```
 To check for memory leaks, use:
 
 ```bash
-valgrind --leak-check=full ./my_program
+valgrind --leak-check=full ./simple_shell
 ```
 
 To access the manpage:
