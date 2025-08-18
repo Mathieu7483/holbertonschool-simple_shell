@@ -33,7 +33,7 @@ The files in this project are compiled using gcc with the following options:
 
 ```bash
 
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o simple_shell
+gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
 ```
 To check for memory leaks, use:
 
