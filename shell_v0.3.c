@@ -104,10 +104,13 @@ void my_fork(char **args)
 }
 
 /**
- * main - entry point of simple shell program
- * Return: EXIT_SUCCESS on success
- */
-int main(void)
+*main - entry point of simple shell program
+*@argc: Argument count
+*@argv: double pointer for argument vector
+*@envp: double pointer for environnement
+* Return: EXIT_SUCCESS on success
+*/
+int main(int argc, char **argv, char **envp)
 {
     char *line = NULL;
     size_t len = 0;
