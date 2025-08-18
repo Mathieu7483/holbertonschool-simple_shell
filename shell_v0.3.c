@@ -102,18 +102,3 @@ void my_fork(char **args)
 
     free(full_path);
 }
-
-int parse_args(char *line, char **args)
-{
-    int i = 0;
-    char *token;
-
-    token = strtok(line, " \t");
-    while (token != NULL && i < 255)
-    {
-        args[i++] = token;
-        token = strtok(NULL, " \t");
-    }
-    args[i] = NULL;
-    return (i);
-}
