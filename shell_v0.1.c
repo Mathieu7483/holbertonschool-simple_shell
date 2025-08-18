@@ -52,6 +52,7 @@ int main(int argc, char **argv, char **envp)
 
 	(void)argc;
 	(void)argv;
+	(void)envp;
 
 	while (1)
 	{
@@ -80,8 +81,6 @@ int main(int argc, char **argv, char **envp)
 			break;
 		parse_args(line, args);
 		my_fork(args);
-		/* Alternatively, use execute_command directly */
-		execute_command(line, envp);
 	}
 	free(line);
 	return (EXIT_SUCCESS);
