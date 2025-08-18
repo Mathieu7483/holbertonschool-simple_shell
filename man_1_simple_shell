@@ -1,0 +1,45 @@
+.TH Simple_Shell 3 "14 August 2025" "Custom Version" "Simple_Shell Manpage"
+.SH NAME
+Simple_Shell \- our version of Simple Shell
+
+.SH PROLOG
+.B This manual page is part of the POSIX Programmer's Manual.  The
+Linux implementation of this interface may differ (consult the
+corresponding Linux manual page for details of Linux behavior), or
+the interface may not be implemented on Linux.
+
+.SH SYNOPSIS
+.B #include """simple_shell.h"""
+
+.B int Simple_Shell(const char *format, ...);
+.SH DESCRIPTION
+.B Simple_Shell()
+is a simplified implementation of the standard SHELL of Unix.The shell utility is a command language interpreter that shall
+execute commands read from a command line string, the standard
+input, or a specified file. The application shall ensure that the
+commands to be executed are expressed in the language described in
+
+Pathname expansion shall not fail due to the size of a file.
+
+Shell input and output redirections have an implementation-defined
+offset maximum that is established in the open file description.
+
+.T
+.SH RETURN VALUE
+Returns.
+If it is an error the return will be negative.
+.SH EXAMPLE
+.nf
+1. Execute a shell command from a string:
+sh -c "ls myfile"
+
+2. Execute a shell script from a file in the current directory:
+sh my_shell_cmds
+.fi
+Output:
+.in
+
+.SH SEE ALSO
+.BR printf(3)
+.SH AUTHOR
+Function written by ROY Mathis, KEDDOUS Heytem and GODALIER Mathieu.
