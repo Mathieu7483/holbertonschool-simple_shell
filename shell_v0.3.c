@@ -161,16 +161,8 @@ int main(int argc, char **argv, char **envp)
             continue;
         }
 
-        /* Tokenize the line into arguments */
-        i = 0;
-        token = strtok(line, " ");
-        while (token != NULL)
-		{
-            args[i] = token;
-            i++;
-            token = strtok(NULL, " ");
-        }
-        args[i] = NULL; /* finish the args array */
+        /* Use the new function to parse arguments */
+        parse_args(line, args);
 
         /* Call to my_fork to execute the command */
         my_fork(args);
