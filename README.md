@@ -132,7 +132,7 @@ julien@ubuntu:/#
 ```
 
 # 💻 Usage
-Installation :
+## Installation :
 ```bash
 git clone https://github.com/username/repositoryname.git
 ```
