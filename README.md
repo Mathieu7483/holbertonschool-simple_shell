@@ -24,7 +24,6 @@ This project involves the development of a simple UNIX command-line interpreter,
 # 📖 Learned Resources
 At the end of this project, you are expected to be able to explain to anyone, without the help of Google:
 
-General
 - Who designed and implemented the original Unix operating system
 - Who wrote the first version of the UNIX shell
 - Who invented the B programming language (the direct predecessor to the C programming language)
