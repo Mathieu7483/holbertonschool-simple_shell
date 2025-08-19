@@ -19,7 +19,7 @@ Through these projects, my goal is to develop a deep understanding of how progra
 
 
 # 💡 Project Context
-This project involves the development of a simple UNIX command-line interpreter, often referred to as a shell. The primary goal is to replicate the basic functionality of the original Thompson shell. Through this process, we'll gain a deep understanding of core system programming concepts, including process management, system calls like `fork()` and `execve()`, and the manipulation of environment variables. The shell will function in both interactive and non-interactive modes, handling commands with arguments, searching the ``PATH`` for executables, and implementing built-in commands such as ``exit`` and ``env.``
+This project involves the development of a simple UNIX command-line interpreter, often referred to as a shell. The primary goal is to replicate the basic functionality of the original Thompson shell. Through this process, we'll gain a deep understanding of core system programming concepts, including process management, system calls like `fork()` and `execve()`, and the manipulation of environment variables. The shell will function in both interactive and non-interactive modes, handling commands with arguments, searching the `PATH` for executables, and implementing built-in commands such as `exit` and `env.`
 
 # 📖 Learned Resources
 At the end of this project, you are expected to be able to explain to anyone, without the help of Google:
