@@ -171,7 +171,6 @@ hsh ls
 output:
 AUTHORS  README.md  functions.c  hsh  img  man_1_simple_shell  shell_v0.1.c  shell_v0.3.c  shell_v0.4.c  simple_shell.h
 ```
-
 https://github.com/user-attachments/assets/277830f2-0a0e-4085-a19e-5c9e03806f82
 
 # 📊 Flowchart et Snippets
