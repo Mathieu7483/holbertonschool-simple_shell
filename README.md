@@ -17,17 +17,14 @@ This project is part of the Holberton School programming curriculum. It focuses 
 # ✅ General Requirements
 
 # 💻 Usage
-
-# 📊 Flowchart et Snippets
-## Flowchart
-
-## Snippets
-
-# 📋 Project Structure and Tasks
-## *The project is organized around the progressive implementation of the simple shell and its functionalities.*
-
-### Tasks
-
+Installation :
+```bash
+git clone https://github.com/Mathieu7483/holbertonschool-simple_shell.git
+```
+To access the manpage:
+```bash
+~/Holberton/holbertonschool-simple_shell$man ./man_1_simple_shell
+```
 # ⚙️ Compilation
 The files in this project are compiled using gcc with the following options:
 
@@ -41,10 +38,27 @@ To check for memory leaks, use:
 valgrind --leak-check=full ./simple_shell
 ```
 
-To access the manpage:
+after compilation, you can directly use the simple shell
 ```bash
-~/Holberton/holbertonschool-simple_shell$man ./man_1_simple_shell
+for example : 
+hsh ls
+
+output:
+AUTHORS  README.md  functions.c  hsh  img  man_1_simple_shell  shell_v0.1.c  shell_v0.3.c  shell_v0.4.c  simple_shell.h
 ```
+
+# 📊 Flowchart et Snippets
+## Flowchart
+
+## Snippets
+
+# 📋 Project Structure and Tasks
+## *The project is organized around the progressive implementation of the simple shell and its functionalities.*
+
+### Tasks
+
+
+
 
 # ✍️ Authors
 [Mathis ROY](https://github.com/rpokman), [Heytem KEDDOUS](https://github.com/h7k2), [Mathieu GODALIER](https://github.com/Mathieu7483) — Students in programming at Holberton School
