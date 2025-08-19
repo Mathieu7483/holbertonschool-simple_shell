@@ -176,6 +176,7 @@ AUTHORS  README.md  functions.c  hsh  img  man_1_simple_shell  shell_v0.1.c  she
 ## Flowchart
 
 ## Snippets
+[exemple video](https://github.com/Mathieu7483/holbertonschool-simple_shell/blob/Mathieu/img/snippet%20video%20shell%20v4.mp4)
 
 # 📋 Project Structure and Tasks
 ## *The project is organized around the progressive implementation of the simple shell and its functionalities.*
