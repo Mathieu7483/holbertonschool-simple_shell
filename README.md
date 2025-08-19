@@ -1,5 +1,5 @@
 # holbertonschool-simple_shell
-create a simple shell
+
 <img src= "https://github.com/Mathieu7483/holbertonschool-simple_shell/blob/Mathieu/img/image%20readme%20pour%20simple%20shell.png">
 
 # 📚 holbertonschool-simple_shell
@@ -7,7 +7,7 @@ Welcome to my holbertonschool-simple_shell repository! This directory marks the 
 
 Through these projects, my goal is to develop a deep understanding of how programs work "under the hood"—exploring memory management, compilation processes, and direct interactions with the operating system.
 
-# 📚 Table of Contents*
+# 📚 Table of Contents
 - [Project Context](https://github.com/Mathieu7483/holbertonschool-simple_shell/tree/Mathieu?tab=readme-ov-file#-project-context)
 - [Learned Ressources](https://github.com/Mathieu7483/holbertonschool-simple_shell/tree/Mathieu?tab=readme-ov-file#-learned-resources)
 - [General Requirements](https://github.com/Mathieu7483/holbertonschool-simple_shell/tree/Mathieu?tab=readme-ov-file#-general-requirements)
@@ -174,6 +174,7 @@ AUTHORS  README.md  functions.c  hsh  img  man_1_simple_shell  shell_v0.1.c  she
 [execution du shell](https://youtu.be/vfosRbVqnTI)
 # 📊 Flowchart et Snippets
 ## Flowchart
+<img src= "https://github.com/Mathieu7483/holbertonschool-simple_shell/blob/Mathieu/img/flowchart.drawio.png">
 
 ## Snippets
 
