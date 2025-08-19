@@ -8,14 +8,14 @@ Welcome to my holbertonschool-simple_shell repository! This directory marks the 
 Through these projects, my goal is to develop a deep understanding of how programs work "under the hood"—exploring memory management, compilation processes, and direct interactions with the operating system.
 
 # 📚 Table of Contents*
-[Project Context](https://github.com/Mathieu7483/holbertonschool-simple_shell/tree/Mathieu?tab=readme-ov-file#-project-context)
-[Learned Ressources](https://github.com/Mathieu7483/holbertonschool-simple_shell/tree/Mathieu?tab=readme-ov-file#-learned-resources)
-[General Requirements](https://github.com/Mathieu7483/holbertonschool-simple_shell/tree/Mathieu?tab=readme-ov-file#-general-requirements)
-[Usage](https://github.com/Mathieu7483/holbertonschool-simple_shell/tree/Mathieu?tab=readme-ov-file#-usage)
-[Compilation](https://github.com/Mathieu7483/holbertonschool-simple_shell/tree/Mathieu?tab=readme-ov-file#%EF%B8%8F-compilation)
-[Flowchart et Snippets](https://github.com/Mathieu7483/holbertonschool-simple_shell/tree/Mathieu?tab=readme-ov-file#-flowchart-et-snippets)
-[Project Structure and Tasks](https://github.com/Mathieu7483/holbertonschool-simple_shell/tree/Mathieu?tab=readme-ov-file#-project-structure-and-tasks)
-[Authors](https://github.com/Mathieu7483/holbertonschool-simple_shell/tree/Mathieu?tab=readme-ov-file#%EF%B8%8F-authors)
+- [Project Context](https://github.com/Mathieu7483/holbertonschool-simple_shell/tree/Mathieu?tab=readme-ov-file#-project-context)
+- [Learned Ressources](https://github.com/Mathieu7483/holbertonschool-simple_shell/tree/Mathieu?tab=readme-ov-file#-learned-resources)
+- [General Requirements](https://github.com/Mathieu7483/holbertonschool-simple_shell/tree/Mathieu?tab=readme-ov-file#-general-requirements)
+- [Usage](https://github.com/Mathieu7483/holbertonschool-simple_shell/tree/Mathieu?tab=readme-ov-file#-usage)
+- [Compilation](https://github.com/Mathieu7483/holbertonschool-simple_shell/tree/Mathieu?tab=readme-ov-file#%EF%B8%8F-compilation)
+- [Flowchart et Snippets](https://github.com/Mathieu7483/holbertonschool-simple_shell/tree/Mathieu?tab=readme-ov-file#-flowchart-et-snippets)
+- [Project Structure and Tasks](https://github.com/Mathieu7483/holbertonschool-simple_shell/tree/Mathieu?tab=readme-ov-file#-project-structure-and-tasks)
+- [Authors](https://github.com/Mathieu7483/holbertonschool-simple_shell/tree/Mathieu?tab=readme-ov-file#%EF%B8%8F-authors)
 
 
 # 💡 Project Context
