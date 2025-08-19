@@ -172,7 +172,6 @@ output:
 AUTHORS  README.md  functions.c  hsh  img  man_1_simple_shell  shell_v0.1.c  shell_v0.3.c  shell_v0.4.c  simple_shell.h
 ```
 [execution du shell](https://youtu.be/vfosRbVqnTI)
-<video src="https://youtu.be/vfosRbVqnTI">snippet video v4</video>
 
 # 📊 Flowchart et Snippets
 ## Flowchart
