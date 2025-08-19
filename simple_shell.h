@@ -32,6 +32,7 @@ void my_fork(char **args);
 int exit_command(char *line);
 void execute_command(char *line, char **envp);
 char *_which(const char *command, const char *path_env);
+int env_command(char **envp);
 
 int main(int argc, char **argv, char **envp);
 
