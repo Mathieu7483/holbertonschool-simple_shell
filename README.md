@@ -60,5 +60,5 @@ AUTHORS  README.md  functions.c  hsh  img  man_1_simple_shell  shell_v0.1.c  she
 
 
 
-# ✍️ Authors
+# ✍️ [Authors](https://github.com/Mathieu7483/holbertonschool-simple_shell/blob/Mathieu/AUTHORS)
 [Mathis ROY](https://github.com/rpokman), [Heytem KEDDOUS](https://github.com/h7k2), [Mathieu GODALIER](https://github.com/Mathieu7483) — Students in programming at Holberton School
