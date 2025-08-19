@@ -160,7 +160,7 @@ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
 To check for memory leaks, use:
 
 ```bash
-valgrind --leak-check=full ./simple_shell
+valgrind --leak-check=full ./hsh
 ```
 
 after compilation, you can directly use the simple shell
