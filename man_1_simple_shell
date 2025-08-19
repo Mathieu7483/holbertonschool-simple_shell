@@ -31,10 +31,10 @@ If it is an error the return will be negative.
 .SH EXAMPLE
 .nf
 1. Execute a shell command from a string:
-sh -c "ls myfile"
+$ -c "ls myfile"
 
 2. Execute a shell script from a file in the current directory:
-sh my_shell_cmds
+$ my_shell_cmds
 .fi
 Output:
 .in
