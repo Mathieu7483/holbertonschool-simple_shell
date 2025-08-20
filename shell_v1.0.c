@@ -7,7 +7,7 @@ int env_command(char **envp)
 	if (envp == NULL)
 	return (-1);
 
-	for (a = 0; envp[a] != NULL; a++)
+	for (a = 0; envp[a] != NULL; a++)/*for*/
 	{
 		printf("%s\n", envp[a]);
 	}
