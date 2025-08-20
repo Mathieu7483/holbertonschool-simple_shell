@@ -1,5 +1,11 @@
 #include "simple_shell.h"
 
+/**
+ * env_command - prints the environment variables
+ * @envp: array of environment variables
+ *
+ * Return: 0 on success, -1 on failure
+ */
 int env_command(char **envp)
 {
 	int a = 0;
