@@ -1,8 +1,6 @@
 # Ne pas ignorer README.md
 !README.md
 # Ignorer les fichiers main.c spécifiquement
-*main.c
-# Ignorer les fichiers de sortie générés par GCC
 *.exe
 # Ignorer les fichiers de sauvegarde de l'éditeur
 *~
