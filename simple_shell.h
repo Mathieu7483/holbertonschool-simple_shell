@@ -31,7 +31,7 @@ int exit_status;
 } simple_shell_t;
 
 int parse_args(char *line, char **args);
-void my_fork(char **args);
+void my_fork(char **args, char **envp);
 int exit_command(char *line);
 void execute_command(char *line, char **envp);
 char *_which(const char *command, const char *path_env);
