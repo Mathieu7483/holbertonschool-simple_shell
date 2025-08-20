@@ -37,7 +37,7 @@ void my_fork(char **args, char **argv, char **envp)
 	{
 		if (execve(full_path, args, envp) == -1)
 		{
-			perror(argv[0]);
+			fprintf(stderr, "%s: 1: %s: %s\n", argv[0], args[0], strerror(errno));
 			free(full_path);
 			exit(EXIT_FAILURE);
 		}
