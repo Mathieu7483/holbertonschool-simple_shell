@@ -38,7 +38,6 @@ char *_which(const char *command, const char *path_env);
 int env_command(char **envp);
 
 int main(int argc, char **argv, char **envp);
-void run_shell(simple_shell_t *shell_state, char **envp);
-
+void run_shell(simple_shell_t *shell_state, char **argv, char **envp);
 
 #endif /*simple_shell_h*/
