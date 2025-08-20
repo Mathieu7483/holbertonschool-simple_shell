@@ -1,4 +1,5 @@
 #include "simple_shell.h"
+
 /**
 * my_fork - personalized fork function to execute a command
 * @args: array of arguments for the command
@@ -10,9 +11,7 @@ void my_fork(char **args, char **argv, char **envp)
 {
 	pid_t pid;
 	int status;
-
-	char *path_env = my_getenv("PATH");
-
+	char *path_env = my_getenv("PATH", envp);  /* Ajout du paramètre envp */
 	char *full_path;
 
 	if (args == NULL || args[0] == NULL)
@@ -37,9 +36,9 @@ void my_fork(char **args, char **argv, char **envp)
 	{
 		if (execve(full_path, args, envp) == -1)
 		{
-			fprintf(stderr, "%s: 1: %s: %s\n", argv[0], args[0], strerror(errno));
+			perror(args[0]);  /* Utilisez perror au lieu de fprintf */
 			free(full_path);
-			exit(EXIT_FAILURE);
+			exit(127);  /* Code d'erreur correct pour "command not found" */
 		}
 	}
 	else /* Parent process */
@@ -58,52 +57,18 @@ void my_fork(char **args, char **argv, char **envp)
 int parse_args(char *line, char **args)
 {
 	int i = 0;
-
 	char *token;
 
-	token = strtok(line, " ");
+	token = strtok(line, " \t\n");  /* Ajout de \t et \n pour meilleure gestion */
 	while (token != NULL && i < 255)
 	{
 		args[i++] = token;
-		token = strtok(NULL, " ");
+		token = strtok(NULL, " \t\n");
 	}
 	args[i] = NULL; /* Terminate the array */
 	return (i);
 }
 
-/**
-* execute_command - create child and execute program
-* @command: command to execute
-* @envp: environment variables
-*
-* Return: void
-*/
-void execute_command(char *command, char **envp)
-{
-	pid_t pid;
-	int status;
-	char *argv[2];
-
-	pid = fork(); /* create child */
-	if (pid == -1)
-	{
-		perror("fork"); /* error if child doesn't work */
-		return;
-	}
-	if (pid == 0)
-	{
-		argv[0] = command;
-		argv[1] = NULL;
-		/* Execute the command with arguments and environment */
-		execve(command, argv, envp);
-		perror(command); /* Display error message if execve fails */
-		exit(1);
-	}
-	else
-	{
-		waitpid(pid, &status, 0); /* Wait for child process to complete */
-	}
-}
 /**
  * main - Entry point for the simple shell program
  * @argc: Number of arguments
@@ -115,7 +80,7 @@ void execute_command(char *command, char **envp)
 int main(int argc, char **argv, char **envp)
 {
 	simple_shell_t shell_state;
-	(void)argc, (void)argv;
+	(void)argc;  /* Suppression de (void)argv car utilisé */
 
 	shell_state.is_interactive = isatty(STDIN_FILENO);
 	shell_state.exit_status = 0;
@@ -141,20 +106,16 @@ void run_shell(simple_shell_t *shell_state, char **argv, char **envp)
 	while (1)
 	{
 		if (shell_state->is_interactive)
+		{
 			printf("$ ");
-		fflush(stdout);
+			fflush(stdout);
+		}
 
 		nread = getline(&line, &len, stdin);
 		if (nread == -1)
 		{
-			if (feof(stdin))
-			{
-				if (shell_state->is_interactive)
-					printf("\n");
-				break;
-			}
-			perror("getline");
-			shell_state->exit_status = EXIT_FAILURE;
+			if (shell_state->is_interactive && feof(stdin))
+				printf("\n");
 			break;
 		}
 		if (line[nread - 1] == '\n')
