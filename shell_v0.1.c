@@ -48,7 +48,7 @@ int main(int argc, char **argv, char **envp)
 	shell_state.is_interactive = isatty(STDIN_FILENO);
 	shell_state.exit_status = 0;
 
-	run_shell(&shell_state, envp);
+	run_shell(&shell_state, argv, envp);
 
 	return (shell_state.exit_status);
 }
@@ -96,7 +96,7 @@ void run_shell(simple_shell_t *shell_state, char **envp)
 			continue;
 		}
 		parse_args(line, args);
-		my_fork(args, envp);
+		my_fork(args, argv, envp);
 	}
 	free(line);
 }
