@@ -2,9 +2,10 @@
 /**
  * my_fork - personalized fork function to execute a command
  * @args: array of arguments for the command
+ * @envp: array of environment variables
  * Return: void
  */
-void my_fork(char **args)
+void my_fork(char **args, char **envp)
 {
 	pid_t pid;
 	int status;
@@ -31,7 +32,7 @@ void my_fork(char **args)
 
 	if (pid == 0)
 	{
-		if (execve(full_path, args, NULL) == -1)
+		if (execve(full_path, args, envp) == -1)
 		{
 			perror("execve");
 			free(full_path);

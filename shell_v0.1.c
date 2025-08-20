@@ -96,7 +96,7 @@ void run_shell(simple_shell_t *shell_state, char **envp)
 			continue;
 		}
 		parse_args(line, args);
-		my_fork(args);
+		my_fork(args, envp);
 	}
 	free(line);
 }
