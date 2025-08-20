@@ -1,34 +1,4 @@
 #include "simple_shell.h"
-
-/**
- * is_executable - check if file is executable
- * @st: stat structure
- * Return: 1 if executable, 0 otherwise
- */
-int is_executable(struct stat *st)
-{
-	return (S_ISREG(st->st_mode) &&
-		(st->st_mode & (S_IXUSR | S_IXGRP | S_IXOTH)));
-}
-
-/**
- * check_direct_path - check if command has direct path
- * @command: command to check
- * Return: duplicated path if found, NULL otherwise
- */
-char *check_direct_path(const char *command)
-{
-	struct stat st;
-
-	if (_strchr((char *)command, '/') != NULL)
-	{
-		if (stat(command, &st) == 0 && is_executable(&st))
-			return (_strdup((char *)command));
-		return (NULL);
-	}
-	return (NULL);
-}
-
 /**
  * _which - find the full path of a command
  * @command: name of the command
@@ -37,43 +7,44 @@ char *check_direct_path(const char *command)
  */
 char *_which(const char *command, const char *path_env)
 {
-	char *path_copy, *path_token, *file_path, *direct_path;
+	char *path_copy, *path_token;
+	char *file_path;
 	struct stat st;
 	int path_len, cmd_len;
 
-	if (command == NULL || *command == '\0')
-		return (NULL);
-	direct_path = check_direct_path(command);
-	if (direct_path != NULL)
-		return (direct_path);
-	if (path_env == NULL || *path_env == '\0')
-		return (NULL);
-	path_copy = _strdup((char *)path_env);
+	if (_strchr((char *)command, '/') != NULL)/*Check if absolute or relative*/
+	{
+		if (stat(command, &st) == 0)/*check if command exist*/
+			return (_strdup((char *)command));/*if yes return duplicate*/
+		return (NULL);/*otherwise return NULL*/
+	}
+	path_copy = _strdup((char *)path_env);/*Duplicate PATH to avoid modification*/
 	if (path_copy == NULL)
+	{
+		perror("_strdup");/*print error if memory allocation fails*/
 		return (NULL);
-	path_token = strtok(path_copy, ":");
+	}
+	path_token = strtok(path_copy, ":");/*Tokenize PATH string by ':'*/
 	while (path_token != NULL)
 	{
-		if (*path_token == '\0')
-			path_token = ".";
-		path_len = _strlen(path_token);
+		path_len = _strlen(path_token);/*length of the current dir and the command*/
 		cmd_len = _strlen((char *)command);
-		file_path = malloc(path_len + cmd_len + 2);
+		file_path = malloc(path_len + cmd_len + 2);/*Allocate memory for path*/
 		if (file_path == NULL)
 		{
+			perror("malloc");/*print memory allocation failure*/
 			free(path_copy);
 			return (NULL);
 		}
-		snprintf(file_path, path_len + cmd_len + 2, "%s/%s",
-			path_token, command);
-		if (stat(file_path, &st) == 0 && is_executable(&st))
+		snprintf(file_path, path_len + cmd_len + 2, "%s/%s", path_token, command);
+		if (stat(file_path, &st) == 0 && (st.st_mode & S_IXUSR))
 		{
-			free(path_copy);
-			return (file_path);
+			free(path_copy);/*Free the PATH copy before returning*/
+			return (file_path);/*Return the full path found*/
 		}
-		free(file_path);
-		path_token = strtok(NULL, ":");
+		free(file_path);/*Free temporary path*/
+		path_token = strtok(NULL, ":");/*Get next directory*/
 	}
-	free(path_copy);
-	return (NULL);
+	free(path_copy);/*Free the duplicated PATH*/
+	return (NULL);/*Command not found*/
 }
