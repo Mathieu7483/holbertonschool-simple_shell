@@ -10,7 +10,9 @@
 char *_strdup(char *str)
 {
 char *a;
+
 int i;
+
 if (str == NULL)
 {
 return (NULL);
@@ -76,6 +78,7 @@ return ('\0');
 int _strlen(char *s)
 {
 int length = 0;
+
 while (s[length])
 {
 length++;
@@ -87,28 +90,25 @@ return (length);
 /**
 *my_getenv - Retrieves the value of an environment variable.
 *@name: The name of the environment variable to search for.
+*@envp: Array of environment variable strings.
 *Return: Pointer to the value string if found, otherwise NULL.
 */
-char *my_getenv(const char *name)
+char *my_getenv(const char *name, char **envp)
 {
 	int i;
 
 	size_t name_len;
 
-	if (name == NULL || *name == '\0')
-	{
+	if (name == NULL || *name == '\0' || envp == NULL)
 		return (NULL);
-	}
 
 	name_len = strlen(name);
 
-	for (i = 0; environ[i] != NULL; i++)
+	for (i = 0; envp[i] != NULL; i++)
 	{
-		if (strncmp(environ[i], name, name_len) == 0 && environ[i][name_len] == '=')
-		{
-			return (&environ[i][name_len + 1]);
-		}
+		if (strncmp(envp[i], name, name_len) == 0 && envp[i][name_len] == '=')
+			return (&envp[i][name_len + 1]);
 	}
-
 	return (NULL);
 }
+

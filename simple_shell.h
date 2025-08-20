@@ -17,7 +17,7 @@ char *_strdup(char *str);
 int _strcmp(char *s1, char *s2);
 char *_strchr(char *s, char c);
 int _strlen(char *s);
-char *my_getenv(const char *name);
+char *my_getenv(const char *name, char **envp);
 
 /**
  * struct simple_shell - our version of a simple shell
