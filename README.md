@@ -171,13 +171,22 @@ hsh ls
 output:
 AUTHORS  README.md  functions.c  hsh  img  man_1_simple_shell  shell_v0.1.c  shell_v0.3.c  shell_v0.4.c  simple_shell.h
 ```
-https://github.com/user-attachments/assets/f4efb4f0-d368-402d-91b9-28a0f9837228
+https://github.com/user-attachments/assets/484e70ff-0a98-4b7a-a76d-79fa20c5b436
 
 # 📊 Flowchart et Snippets
 ## Flowchart
+<div align="center">
 <img src= "https://github.com/Mathieu7483/holbertonschool-simple_shell/blob/Mathieu/img/flowchart.drawio.png">
+</div>
 
 ## Snippets
+<div align="center">
+<img src="https://github.com/Mathieu7483/holbertonschool-simple_shell/blob/main/img/env_command.png" width="600">
+  
+<img src="https://github.com/Mathieu7483/holbertonschool-simple_shell/blob/main/img/exit_command.png" width="600">
+
+<img src="https://github.com/Mathieu7483/holbertonschool-simple_shell/blob/main/img/my_fork.png" width="600">
+</div>
 
 # 📋 Project Structure and Tasks
 ## *The project is organized around the progressive implementation of the simple shell and its functionalities.*
