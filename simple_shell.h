@@ -32,11 +32,8 @@ int exit_status;
 
 int parse_args(char *line, char **args);
 void my_fork(char **args, char **argv, char **envp);
-int exit_command(char *line);
-void execute_command(char *line, char **envp);
 char *_which(const char *command, const char *path_env);
-int is_executable(struct stat *st);
-char *check_direct_path(const char *command);
+int exit_command(char *line);
 int env_command(char **envp);
 
 int main(int argc, char **argv, char **envp);
