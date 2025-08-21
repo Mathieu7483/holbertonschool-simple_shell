@@ -160,7 +160,7 @@ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
 To check for memory leaks, use:
 
 ```bash
-valgrind --leak-check=full ./simple_shell
+valgrind --leak-check=full ./hsh
 ```
 
 after compilation, you can directly use the simple shell
@@ -171,7 +171,7 @@ hsh ls
 output:
 AUTHORS  README.md  functions.c  hsh  img  man_1_simple_shell  shell_v0.1.c  shell_v0.3.c  shell_v0.4.c  simple_shell.h
 ```
-https://github.com/user-attachments/assets/277830f2-0a0e-4085-a19e-5c9e03806f82
+https://github.com/user-attachments/assets/f4efb4f0-d368-402d-91b9-28a0f9837228
 
 # 📊 Flowchart et Snippets
 ## Flowchart
