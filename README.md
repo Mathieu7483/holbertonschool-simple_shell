@@ -162,15 +162,28 @@ To check for memory leaks, use:
 ```bash
 valgrind --leak-check=full ./hsh
 ```
-
-after compilation, you can directly use the simple shell
+Output :
 ```bash
-for example : 
-hsh ls
-
-output:
-AUTHORS  README.md  functions.c  hsh  img  man_1_simple_shell  shell_v0.1.c  shell_v0.3.c  shell_v0.4.c  simple_shell.h
+user@user:~/Holberton/holbertonschool-simple_shell$ valgrind --leak-check=full ./hsh
+==1331== Memcheck, a memory error detector
+==1331== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
+==1331== Using Valgrind-3.22.0 and LibVEX; rerun with -h for copyright info
+==1331== Command: ./hsh
+==1331== 
+$ exit
+==1331== 
+==1331== HEAP SUMMARY:
+==1331==     in use at exit: 0 bytes in 0 blocks
+==1331==   total heap usage: 3 allocs, 3 frees, 2,168 bytes allocated
+==1331== 
+==1331== All heap blocks were freed -- no leaks are possible
+==1331== 
+==1331== For lists of detected and suppressed errors, rerun with: -s
+==1331== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
 ```
+
+# after compilation, you can directly use the simple shell
+## here some returns in video :
 https://github.com/user-attachments/assets/484e70ff-0a98-4b7a-a76d-79fa20c5b436
 
 # 📊 Flowchart et Snippets
